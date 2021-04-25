@@ -19,7 +19,7 @@ contract Node {
         addSite("lol?");
     }
 
-    function addSite(string memory _name) private {
+    function addSite(string memory _name) public {
         siteCount++;
         sites[siteCount] = Site(siteCount, _name, 0);
     }
