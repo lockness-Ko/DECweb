@@ -52,7 +52,7 @@ App = {
       //     var id = site[0];
       //     var code = site[1];
       //     var key = site[2];
-      electionInstance.sites(parseInt(window.location.href.split("=")[1])).then((x)=>{
+      electionInstance.sites(parseInt(window.location.href.split("site=")[1])).then((x)=>{
         document.write(x[1]);
       });
     });
