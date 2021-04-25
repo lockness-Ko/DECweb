@@ -1,0 +1,19 @@
+{
+  "name": "decweb",
+  "version": "1.0.0",
+  "description": "A New Decentralized Anonymous Internet",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo lol?"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lockness-Ko/DECweb.git"
+  },
+  "author": "locknessKo, HomeBrandCereal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lockness-Ko/DECweb/issues"
+  },
+  "homepage": "https://github.com/lockness-Ko/DECweb#readme"
+}
