@@ -1,4 +1,5 @@
 # DECweb
+![Our Logo](logo.png "DECweb")
  A New Decentralized Anonymous Internet
 
-![Our Logo](logo.png "DECweb")
+DECweb is a thing idk - add description
