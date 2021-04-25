@@ -2,9 +2,10 @@
   "name": "decweb",
   "version": "1.0.0",
   "description": "A New Decentralized Anonymous Internet",
-  "main": "index.js",
+  "main": "truffle.js",
   "scripts": {
-    "start": "echo lol?"
+    "start": "echo lol?",
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "electron": "^12.0.5"
   },
   "devDependencies": {
-    "ganache-cli": "^6.12.2"
+    "ganache-cli": "^6.12.2",
+    "lite-server": "^2.6.1"
   }
 }

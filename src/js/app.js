@@ -23,7 +23,7 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON("Election.json", function(election) {
+    $.getJSON("Node.json", function(election) {
       // Instantiate a new truffle contract from the artifact
       App.contracts.Election = TruffleContract(election);
       // Connect provider to interact with contract
@@ -41,14 +41,14 @@ App = {
       // Restart Chrome if you are unable to receive this event
       // This is a known issue with Metamask
       // https://github.com/MetaMask/metamask-extension/issues/2393
-      instance.votedEvent({}, {
-        fromBlock: 0,
-        toBlock: 'latest'
-      }).watch(function(error, event) {
-        console.log("event triggered", event)
-        // Reload when a new vote is recorded
-        App.render();
-      });
+      // instance.votedEvent({}, {
+      //   fromBlock: 0,
+      //   toBlock: 'latest'
+      // }).watch(function(error, event) {
+      //   console.log("event triggered", event)
+      //   // Reload when a new vote is recorded
+      //   App.render();
+      // });
     });
   },
 
@@ -71,26 +71,26 @@ App = {
     // Load contract data
     App.contracts.Election.deployed().then(function(instance) {
       electionInstance = instance;
-      return electionInstance.candidatesCount();
-    }).then(function(candidatesCount) {
+      return electionInstance.siteCount();
+    }).then(function(siteCount) {
       var candidatesResults = $("#candidatesResults");
       candidatesResults.empty();
 
       var candidatesSelect = $('#candidatesSelect');
       candidatesSelect.empty();
 
-      for (var i = 1; i <= candidatesCount; i++) {
-        electionInstance.candidates(i).then(function(candidate) {
-          var id = candidate[0];
-          var name = candidate[1];
-          var voteCount = candidate[2];
+      for (var i = 1; i <= siteCount; i++) {
+        electionInstance.sites(i).then(function(site) {
+          var id = site[0];
+          var code = site[1];
+          var key = site[2];
 
           // Render candidate Result
-          var candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
+          var candidateTemplate = "<tr><th>" + id + "</th><td>" + code + "</td><td>" + key + "</td></tr>"
           candidatesResults.append(candidateTemplate);
 
           // Render candidate ballot option
-          var candidateOption = "<option value='" + id + "' >" + name + "</ option>"
+          var candidateOption = "<option value='" + id + "' >" + code + "</ option>"
           candidatesSelect.append(candidateOption);
         });
       }
