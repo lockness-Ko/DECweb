@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/lockness-Ko/DECweb/issues"
   },
-  "homepage": "https://github.com/lockness-Ko/DECweb#readme"
+  "homepage": "https://github.com/lockness-Ko/DECweb#readme",
+  "dependencies": {
+    "electron": "^12.0.5"
+  },
+  "devDependencies": {
+    "ganache-cli": "^6.12.2"
+  }
 }
