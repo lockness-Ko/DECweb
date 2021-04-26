@@ -78,7 +78,7 @@ App = {
           document.write(x[1]);
         });
       }).catch(function (error) {
-        console.warn(error);
+        console.error(error);
       });
     }
   }
