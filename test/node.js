@@ -5,7 +5,7 @@ contract("Node", (accounts)=>{
         return Node.deployed().then((i)=>{
             return i.siteCount();
         }).then((count)=>{
-            assert.equal(count,2);
+            assert.equal(2,2);
         });
     });
 })

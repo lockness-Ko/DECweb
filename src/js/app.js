@@ -75,7 +75,7 @@ App = {
         //     var code = site[1];
         //     var key = site[2];
         NodeInstance.sites(parseInt(window.location.href.split("site=")[1])).then((x) => {
-          document.write(x[1]);
+          document.write(dsml2html(x[1]));
         });
       }).catch(function (error) {
         console.error(error);
