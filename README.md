@@ -9,6 +9,9 @@ To run the node:
  - npm install -g truffle
  - npm install -g ganache-cli
  - npm install --save-dev lite-server
+ - npm run dev
+ - ganache-cli --port <port> --host <ip>
+ - truffle migrate --reset --host <ip>
 
 To connect to a remote node:
  - Create metamask custom RPC with node IP

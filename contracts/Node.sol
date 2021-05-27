@@ -15,8 +15,8 @@ contract Node {
     );
 
     constructor() public {
-        addSite("BRUH WHAT THE DOG DOIN");
-        addSite("lol?");
+        // addSite("BRUH WHAT THE DOG DOIN");
+        // addSite("lol?");
     }
 
     function addSite(string memory _name) public {
