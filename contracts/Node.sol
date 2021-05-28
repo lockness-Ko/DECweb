@@ -23,4 +23,8 @@ contract Node {
         siteCount++;
         sites[siteCount] = Site(siteCount, _name, 0);
     }
+
+    function editSite(uint id, string memory _name) public {
+        sites[id] = Site(id, _name, 0);
+    }
 }

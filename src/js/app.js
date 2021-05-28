@@ -51,6 +51,19 @@ App = {
     });
   },
 
+  editSite: function () {
+    App.contracts.Node.deployed().then(function (instance) {
+      instance.editSite($("#id").val() ,$("#code_input").val(), {
+        from: App.account
+      }).then(() => {
+        instance.siteCount().then((x) => {
+          window.location.href = "http://" + window.location.host + "/?site=" + x;
+        });
+      });
+
+    });
+  },
+
   render: function () {
     web3.eth.getCoinbase(function (err, account) {
       if (err === null) {
@@ -63,7 +76,7 @@ App = {
         console.error(err)
       }
     });
-    if (window.location.href.includes('addSite')) // THIS IS A MANUAL STOP 
+    if (window.location.href.includes('addSite')||window.location.href.includes('editsite')) // THIS IS A MANUAL STOP 
     {} else {
       // Load contract data
       App.contracts.Node.deployed().then(function (instance) {
