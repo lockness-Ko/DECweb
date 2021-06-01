@@ -5,6 +5,13 @@ contract Node {
         uint id;
         string code;
         uint key;
+        uint chunkCount;
+        mapping(uint => Chunk) public chunks;
+    }
+
+    struct Chunk {
+        uint belongs;
+        string data;
     }
 
     mapping(uint => Site) public sites;
@@ -15,17 +22,27 @@ contract Node {
         // addSite("lol?");
     }
 
-    function addSite(uint key, string memory _name) public {
+    function addSite(uint key, string memory code) public {
         siteCount++;
-        sites[siteCount] = Site(siteCount, _name, key);
+        sites[siteCount] = Site(siteCount, code, key);
     }
 
-    function editSite(uint id, uint key, string memory _name) public {
+    function addChunk(uint id, uint key, string memory code) {
+        chunkCount++;
         if(sites[id].key != key) {
-            //YOU BROKE THE RULES
+            //YOU BROKE THE RULES (silent error, confirmation is on the frontend)
         }
         else {
-            sites[id] = Site(id, _name, key);
+            sites[id].chunks[chunkCount] = Chunk(id, code);
+        }
+    }
+
+    function editSite(uint id, uint key, string memory code) public {
+        if(sites[id].key != key) {
+            //YOU BROKE THE RULES (silent error, confirmation is on the frontend)
+        }
+        else {
+            sites[id] = Site(id, code, key);
         }
     }
 }
