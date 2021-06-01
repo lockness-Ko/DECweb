@@ -19,12 +19,17 @@ contract Node {
         // addSite("lol?");
     }
 
-    function addSite(string memory _name) public {
+    function addSite(uint key, string memory _name) public {
         siteCount++;
-        sites[siteCount] = Site(siteCount, _name, 0);
+        sites[siteCount] = Site(siteCount, _name, key);
     }
 
-    function editSite(uint id, string memory _name) public {
-        sites[id] = Site(id, _name, 0);
+    function editSite(uint id, uint key, string memory _name) public {
+        if(sites[id].key != key) {
+            //YOU BROKE THE RULES
+        }
+        else {
+            sites[id] = Site(id, _name, key);
+        }
     }
 }

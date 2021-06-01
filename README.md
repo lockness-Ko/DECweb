@@ -11,7 +11,8 @@ To run the node:
  - npm install --save-dev lite-server
  - npm run dev
  - ganache-cli --port <port> --host <ip>
- - truffle migrate --reset --host <ip>
+ - Edit truffle-config.js with the correct port and host
+ - truffle migrate --reset
 
 To connect to a remote node:
  - Create metamask custom RPC with node IP
