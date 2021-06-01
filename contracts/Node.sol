@@ -10,10 +10,6 @@ contract Node {
     mapping(uint => Site) public sites;
     uint public siteCount;
 
-    event votedEvent (
-        uint indexed _candidateId
-    );
-
     constructor() public {
         // addSite("BRUH WHAT THE DOG DOIN");
         // addSite("lol?");
